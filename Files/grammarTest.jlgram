@@ -1,0 +1,181 @@
+================= Test 1 ========================
+x = 2
+y = 3
+z = + x   y
+print ( z )
+
+<program> -> function id ( ) <block> end
+
+<block> -> <statement> <block>
+<statement> -> <assignment_statement>
+<assignment_statement> -> id assignment_operator <arithmetic_expression>
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <assignment_statement>
+<assignment_statement> -> id assignment_operator <arithmetic_expression>
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <assignment_statement>
+<assignment_statement> -> id assignment_operator <arithmetic_expression>
+<arithmetic_expression> -> <binary_expression>
+<binary_expression> -> <arithmetic_op> <arithmetic_expression> <arithmetic_expression>
+<arithmetic_op> -> add_operator
+<arithmetic_expression> -> id 
+<arithmetic_expression> -> id 
+
+<block> -> <statement>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> id
+
+
+================= Test 2 ========================
+x = 7
+if < x 4
+print ( x )
+else
+print ( * x 2 )
+end
+
+
+<program> -> function id ( ) <block> end
+
+<block> -> <statement> <block>
+<statement> -> <assignment_statement>
+<assignment_statement> -> id assignment_operator <arithmetic_expression>
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <if_statement>
+<if_statement> -> if <boolean_expression> <block> else <block> end
+<boolean_expression> -> <relative_op> <arithmetic_expression> <arithmetic_expression>
+<relative_op> -> lt_operator
+<arithmetic_expression> -> id
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> id
+
+<block> -> <statement>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> <binary_expression>
+<binary_expression> -> <arithmetic_op> <arithmetic_expression> <arithmetic_expression>
+<arithmetic_op> -> mul_operator
+<arithmetic_expression> -> id
+<arithmetic_expression> -> literal_integer
+
+
+================= Test 3 ========================
+r = 5
+while <= r 10
+print ( r )
+r = + r 1
+end
+print ( 89 )
+
+
+<program> -> function id ( ) <block> end
+
+<block> -> <statement> <block>
+<statement> -> <assignment_statement>
+<assignment_statement> -> id assignment_operator <arithmetic_expression>
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <while_statement>
+<while_statement> -> while <boolean_expression> <block> end
+<boolean_expression> -> <relative_op> <arithmetic_expression> <arithmetic_expression>
+<relative_op> -> le_operator
+<arithmetic_expression> -> id
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> id
+
+<block> -> <statement> <block>
+<statement> -> <assignment_statement>
+<assignment_statement> -> id assignment_operator <arithmetic_expression>
+<arithmetic_expression> -> <binary_expression>
+<binary_expression> -> <arithmetic_op> <arithmetic_expression> <arithmetic_expression>
+<arithmetic_op> -> add_operator
+<arithmetic_expression> -> id 
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> literal_integer
+
+================= Test 4 ========================
+for i = 3 : 5
+if != i 4
+print ( i )
+else
+print ( 333 )
+end
+end
+
+
+<program> -> function id ( ) <block> end
+
+<block> -> <statement> <block>
+<statement> -> <for_statement>
+<for_statement> -> for id = <iter> <block> end
+<iter> -> <arithmetic_expression> : <arithmetic_expression>
+
+<block> -> <statement> <block> 
+<statement> -> <assignment_statement> 
+<assignment_statement> -> id assignment_operator <arithmetic_expression> 
+<arithmetic_expression> -> literal_integer
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <if_statement>
+<if_statement> -> if <boolean_expression> <block> else <block> end
+<boolean_expression> -> <relative_op> <arithmetic_expression> <arithmetic_expression>
+<relative_op> -> ne_operator
+<arithmetic_expression> -> id
+<arithmetic_expression> -> literal_integer
+
+<block> -> <statement> <block>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> id
+
+
+<block> -> <statement>
+<statement> -> <print_statement>
+<print_statement> -> print ( <arithmetic_expression> )
+<arithmetic_expression> -> literal_integer
+
+<<ALL>>
+x = 2
+y = 3
+z = + x y
+print ( z )
+x = 7
+if < x 4
+print ( x )
+else
+print ( * x 2 )
+end
+r = 5
+while <= r 10
+print ( r )
+r = + r 1
+end
+print ( 89 )
+for i = 3 : 5
+if != i 4
+print ( i )
+else
+print ( 333 )
+end
+end
