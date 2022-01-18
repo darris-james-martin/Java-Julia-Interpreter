@@ -2,25 +2,24 @@
  Concepts of Programming Languages Class to make a Julia Interpreter for Java
  
 ### Details About Application
-This was a group project shared between myself and Robert Hannah.
+This was a group project shared between myself and Robert Hannah where we were asked to create a functional interpreter using Java to interpret the minimal form of Julia.
 
-The students were asked to create a functional interpreter using one of three programming languages. The programming language will interpret the minimal form of Julia. The project was divided into three parts. 
-
+#### The project was divided into three parts:
 The first assignment was to create a Lexical Analyzer. The output of this assignment will show the interpreter will properly be able to scan a source code and place the Lexemes into Tokens.
 
-The second assignment was to create a Parser. The Parser will import the output of the Lexical Analyzer and provide a list of Statements that prove that the parser is interpreting the source code in the grammar associated with this minimal form of Julia.
+The second assignment was to create a Parser that will import the output of the Lexical Analyzer and provide a list of statements that prove that the Parser is interpreting the source code in the grammar associated with this basic form of Julia.
 
-The third and final assignment is to create the Interpreter. This will take the input that is now stored in the Parser and execute each to output the solution. The interpreter should be the easiest part of the project since all the heavy lifting was done by the Parser.  
+The third and final assignment was to create the Interpreter. This will capture the input stored in the Parser and execute each to output the solution. Because of all the extra work Robert and I put into the couplings, the interpreter became the easiest part of the project to implement. 
 
-The challenging part of this project is that it changed a lot during production. Every week the professor would change something about the specs, and after a few weeks of us having to completely revise our code Robert and I spent a few hours in the lab creating a foolproof design that would be very modular. We did this by using couplings. 
+The challenging part of this project was that it changed constantly during production. Every week the professor would revise the specs, and after weeks of completely revising our code, Robert and I spent an evening in the lab creating a foolproof design using couplings that would be vastly modular. 
 
-A coupling is an object that will take the Tokens and place them in containers, so they are held together. When the source code is something like “x=7”, the Parser will create an Int IdentifierObject which inherits from IdentifierCoupling. This class keeps the identifier x and the integer 7, so it is ready to execute. From the coupling class we can call getParsedGrammar() and this will output a string of the grammar of what this specific coupling is doing. We can also call executeStatement() and this will execute this coupling, but we don’t call this until we have placed all the couplings into statements.
+A coupling is an object that will take the Tokens and place them in containers, so that they are held together. For example, when the source code is “x=7”, the Parser will create an Int IdentifierObject which inherits from IdentifierCoupling. This class keeps the identifier x and the integer 7, so it is ready to execute. From the coupling class we can call getParsedGrammar() and this will output a string of the grammar of what this specific coupling is doing. We can also call executeStatement() and this will execute this coupling, but this will not get called until all couplings have been placed into statements.
 
  ![image](https://user-images.githubusercontent.com/93277335/148869056-260bf398-2fa4-488b-ac61-d622f1d90248.png)
 
-This is an example of the breakdown of coupling steps, wrapper, operation, and statements. 
+<i>This is an example of the breakdown of coupling steps, wrapper, operation, and statements.</i>
 
-For each coupling the professor wanted us to output a document with the token and lexime. She also wanted us to print to screen the grammar. In each coupling we had:
+For each coupling, the professors requirements were to output a document with the token and lexime. and to print to screen the grammar. In each coupling we had:
 
 **getValue**() – returns the value of what the coupling was supposed to do
 
@@ -74,7 +73,7 @@ public class CouplingIntAdd extends CouplingObject implements IntValueObject {
 }
 ```
 
-Going this method made the project a lot more bearable. When the professor would say “I changed my mind, I want you to also add a while loop function” we just copied over one of these couplings and revise the code to handle a while statement. 
+Using this method allowed for variations when the professor would again change up the specifications. For example " I want you to also interpret the while loop function”. The design allowed us to copy over one of these couplings and revise the code to handle a while statement. 
 
 ## Input
 Julia code
